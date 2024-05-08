@@ -1,0 +1,14 @@
+@import "../../styles.scss";
+
+
+.button-ui {
+    width: 101px;
+    height: 40px;
+    border-radius: 4px;
+    padding: 8px 32px 8px 32px;
+    border: none;
+    font-size: medium;
+    color: #000000;
+    background-color: $text-color;
+    cursor: pointer;
+}

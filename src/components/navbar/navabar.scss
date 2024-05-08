@@ -1,0 +1,55 @@
+@import "../../styles.scss";
+
+.navbar {
+    background-color: $primary-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0px 32px 0px 32px;
+}
+
+.navbar .nav-link {
+    color: $text-color;
+}
+
+.navbar .nav-search {
+    border: 1px solid $text-color;
+    background-color: $primary-color;
+    color: $text-color;
+    width: 300px;
+    display: flex;
+    height: 40px;
+    border-radius: 4px;
+    
+}
+.navbar .nav-right {
+    display: flex;
+    align-items: center;
+    width: 433px;
+    justify-content: space-between;
+}
+.navbar .nav-search .search-bar {
+    color: $text-color;
+    border: 0px;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    font-size: medium;
+    color: $text-color;
+    background-color: $primary-color;
+}
+
+.navbar .search-icon {
+    width: 10%;
+    height: 25px;
+    margin: auto;
+
+}
+.nav-search input:focus {
+    outline: none;
+}
+
+.nav-search input::placeholder {
+    color: $text-color;
+}
