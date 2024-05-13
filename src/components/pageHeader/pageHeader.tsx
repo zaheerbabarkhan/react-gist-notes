@@ -1,18 +1,25 @@
+import { useState } from "react"
 import "./pageHeader.scss"
 import { IoIosList, IoMdGrid } from "react-icons/io"
 
 
-const ListView = () => {
+const PageHeader = () => {
+    const [gridActive, setGridActive] = useState(false);
+    const [listActive, setListActive] = useState(true);
+    const activateAlternateView = () => {
+        setListActive((prevState) => !prevState);
+        setGridActive((prevState) => !prevState);
+    }
     return (
         <div className="page-header">
             <div className="page-heading">
                 <p>Public Gists</p>
             </div>
             <div className="view-buttons">
-                <button className="grid-view grid-active">
-                    <IoMdGrid size={27} className="grid-icon"/>
+                <button className={`grid-view ${gridActive ? "grid-active": ""}`} onClick={activateAlternateView}>
+                    <IoMdGrid size={27} className="grid-icon" />
                 </button>
-                <button className="list-view">
+                <button className={`list-view ${listActive ? "list-active" : ""}`} onClick={activateAlternateView}>
                     <IoIosList size={27} className="list-icon" />
                 </button>
 
@@ -21,4 +28,4 @@ const ListView = () => {
     )
 }
 
-export default ListView
+export default PageHeader
