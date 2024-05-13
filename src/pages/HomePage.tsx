@@ -1,9 +1,10 @@
+import ListView from "../components/pageHeader/pageHeader"
 
 const HomePage = () => {
   return (
-    <div>
-      Home Page
-    </div>
+    <>
+      <ListView />
+    </>
   )
 }
 

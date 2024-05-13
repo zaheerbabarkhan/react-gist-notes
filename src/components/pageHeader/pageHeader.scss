@@ -1,0 +1,68 @@
+@import "../../styles.scss"; 
+
+.page-header {
+    width: 80%;
+    
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.page-header .page-heading {
+    font-weight: 400;
+    font-size: 25px;
+    color: #3D3D3D;
+}
+
+.view-buttons {
+    height: 36px;
+    width: 88px;
+    color: $primary-color;
+
+
+}
+
+.view-buttons:focus {
+    cursor: pointer;
+}
+
+.grid-view {
+    color: #B7B7B7;
+    background-color: white;
+    box-shadow: none;
+    border-radius: 8px;
+    width: 44px;
+    height: 36px;
+    border-color: #B7B7B7;
+    border-style: solid;
+    border-width: 1px 0px 1px 1px;
+    border-radius: 4px 0px 0px 4px;
+    padding: 8px, 12px, 8px, 12px;
+}
+
+.list-view {
+    @extend .grid-view;
+    border-width: 1px 1px 1px 0px;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.list-view:hover, .grid-view:hover {
+    cursor: pointer;
+}
+
+.grid-active {
+    @extend .grid-view;
+    color: #628186;
+    background-color: #e3e3e3;
+}
+
+.list-active {
+    @extend .list-view;
+    color: #628186;
+    background-color: #e3e3e3;
+}
