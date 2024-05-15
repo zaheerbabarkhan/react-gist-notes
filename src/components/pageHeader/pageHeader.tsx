@@ -16,10 +16,10 @@ const PageHeader = () => {
                 <p>Public Gists</p>
             </div>
             <div className="view-buttons">
-                <button className={`grid-view ${gridActive ? "grid-active": ""}`} onClick={activateAlternateView}>
+                <button className={`grid-button ${gridActive ? "grid-active": ""}`} onClick={activateAlternateView}>
                     <IoMdGrid size={27} className="grid-icon" />
                 </button>
-                <button className={`list-view ${listActive ? "list-active" : ""}`} onClick={activateAlternateView}>
+                <button className={`list-button ${listActive ? "list-active" : ""}`} onClick={activateAlternateView}>
                     <IoIosList size={27} className="list-icon" />
                 </button>
 
