@@ -1,0 +1,136 @@
+@import "../../styles.scss";
+
+.list-view {
+  width: 80%;
+  height: auto;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list-table {
+  color: #000000;
+  width: 100%;
+  border-collapse: collapse;
+  border-color: $skeleton-color;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 50px;
+}
+
+.table-head {
+  height: auto;
+  background-color: $skeleton-color;
+  text-align: left;
+}
+
+.table-head th {
+  padding: 20px;
+  font-family: "Inter";
+  font-weight: 700;
+}
+
+.table-head .th-1 {
+  width: 20%;
+}
+
+.table-head .th-2 {
+  width: 25%;
+}
+
+.table-head .th-3 {
+  width: 15%;
+}
+
+.table-head .th-4 {
+  width: 25%;
+}
+
+.table-head .th-5 {
+  width: 20%;
+}
+
+.table-data .td-avatar,
+.td-keyword,
+.td-updated,
+.td-notebook,
+.td-star {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-family: "Inter";
+  line-height: 20px;
+}
+.table-data {
+  border-style: solid;
+  border-color: $skeleton-color;
+  border-width: 0px 0px 3px 0px;
+}
+
+.td-avatar {
+  display: flex;
+  padding: 10px 16px;
+  align-items: center;
+}
+
+.td-avatar img {
+  width: 30px;
+  height: 30px;
+}
+
+.td-avatar p {
+  margin-left: 10px;
+}
+
+.td-keyword {
+  padding: 0px 20px;
+}
+.td-keyword p {
+  background-color: $primary-color;
+  font-size: 14px;
+  border-radius: 50px;
+  color: $text-color;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  font-weight: 700;
+}
+
+.star-icon {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.table-foot td {
+  padding: 20px 20px;
+  font-size: 20px;
+  font-family: "Inter";
+  // line-height: 20px;
+  background-color: $skeleton-color;
+  // text-align: right 
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  align-items: center;
+}
+
+.left-click, .right-click {
+  cursor: pointer;
+}
+.page-number input{
+  font-size: 20px;
+  width: 39px;
+  height: 36px;
+  text-align: center;
+}
+
+.page-number {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

@@ -31,38 +31,38 @@
     cursor: pointer;
 }
 
-.grid-view {
-    color: #B7B7B7;
+.grid-button {
+    color: $skeleton-color;
     background-color: white;
     box-shadow: none;
     border-radius: 8px;
     width: 44px;
     height: 36px;
-    border-color: #B7B7B7;
+    border-color: $skeleton-color;
     border-style: solid;
     border-width: 1px 0px 1px 1px;
     border-radius: 4px 0px 0px 4px;
     padding: 8px, 12px, 8px, 12px;
 }
 
-.list-view {
-    @extend .grid-view;
+.list-button {
+    @extend .grid-button;
     border-width: 1px 1px 1px 0px;
     border-radius: 0px 4px 4px 0px;
 }
 
-.list-view:hover, .grid-view:hover {
+.list-button:hover, .grid-button:hover {
     cursor: pointer;
 }
 
 .grid-active {
-    @extend .grid-view;
+    @extend .grid-button;
     color: #628186;
-    background-color: #e3e3e3;
+    background-color: $skeleton-color;
 }
 
 .list-active {
-    @extend .list-view;
+    @extend .list-button;
     color: #628186;
-    background-color: #e3e3e3;
+    background-color: $skeleton-color;
 }
