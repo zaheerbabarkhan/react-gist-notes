@@ -60,6 +60,9 @@
       display: none;
     }
 
+    &:hover .star-fork-main {
+      display: flex;
+    }
     
   }
 }

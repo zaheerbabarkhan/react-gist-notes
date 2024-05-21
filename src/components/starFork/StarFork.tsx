@@ -4,9 +4,9 @@ import "./sarfork.scss"
 
 const StarFork = () => {
     return (
-        <div className="star-icon">
-            <PiGitForkThin size={30} />
-            <CiStar size={30} />
+        <div className="star-fork-icon">
+            <PiGitForkThin size={30} className='fork-icon'/>
+            <CiStar size={30} className='star-icon'/>
         </div>
     )
 }
