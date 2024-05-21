@@ -1,0 +1,38 @@
+@import "../../styles.scss";
+
+.info-main {
+  display: flex;
+  padding: 0px 10px;
+  height: 100%;
+  gap: 10px;
+
+  .image img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    gap: 7px;
+
+    .user-info {
+      font-size: 16px;
+      font-family: "Inter";
+      font-weight: 400;
+      color: $primary-color;
+      cursor: pointer;
+      .gist-name {
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+
+    .gist-info {
+      font-size: 13px;
+      color: #7a7a7a;
+    }
+  }
+}
