@@ -3,6 +3,7 @@ import avatar from "../../assets/avavtar-svg.svg"
 import { CiStar } from "react-icons/ci";
 import { PiGitForkThin } from "react-icons/pi";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
+import StarFork from "../starFork/StarFork";
 const ListView = () => {
     return (
         <div className="list-view">
@@ -36,10 +37,7 @@ const ListView = () => {
                             <p>Last updated few hours ago</p>
                         </td>
                         <td className="td-star">
-                            <div className="star-icon">
-                                <PiGitForkThin size={30} />
-                                <CiStar size={30} />
-                            </div>
+                            <StarFork />
                         </td>
                     </tr>
                     <tr className="table-data">
@@ -61,10 +59,7 @@ const ListView = () => {
                             <p>Last updated few hours ago</p>
                         </td>
                         <td className="td-star">
-                            <div className="star-icon">
-                                <PiGitForkThin size={30} />
-                                <CiStar size={30} />
-                            </div>
+                            <StarFork />
                         </td>
                     </tr>
                 </tbody>
@@ -72,9 +67,9 @@ const ListView = () => {
                     <tr className="table-foot">
                         <td colSpan={5}>
                             <div className="pagination">
-                                <GoChevronLeft size={25}  className="left-click" onClick={() => console.log("left clicked")} />
+                                <GoChevronLeft size={25} className="left-click" onClick={() => console.log("left clicked")} />
                                 <span className="page-number">Page <input type="search" /> of {14}</span>
-                                <GoChevronRight size={25} className="right-click" onClick={() => console.log("left clicked")}/>
+                                <GoChevronRight size={25} className="right-click" onClick={() => console.log("left clicked")} />
                             </div>
                         </td>
                     </tr>
