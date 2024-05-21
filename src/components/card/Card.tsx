@@ -15,7 +15,9 @@ const Card = () => {
             <span className="hover-filename">{`filename111.json`}</span>
           </div>
         </div>
-        <JSONPretty id="json-pretty" json={jsonFile} theme={github} className="margin-0" />
+        <Link to={"/"} style={{ all: "unset"}}>
+          <JSONPretty id="json-pretty" json={jsonFile} theme={github} className="margin-0" />
+        </Link>
       </div>
       <div className="card-info">
         <UserInfo />
