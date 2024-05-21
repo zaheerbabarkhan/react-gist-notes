@@ -4,6 +4,7 @@ import { CiStar } from "react-icons/ci";
 import { PiGitForkThin } from "react-icons/pi";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import StarFork from "../starFork/StarFork";
+import Pagination from "../pagination/Pagination";
 const ListView = () => {
     return (
         <div className="list-view">
@@ -66,11 +67,7 @@ const ListView = () => {
                 <tfoot>
                     <tr className="table-foot">
                         <td colSpan={5}>
-                            <div className="pagination">
-                                <GoChevronLeft size={25} className="left-click" onClick={() => console.log("left clicked")} />
-                                <span className="page-number">Page <input type="search" /> of {14}</span>
-                                <GoChevronRight size={25} className="right-click" onClick={() => console.log("left clicked")} />
-                            </div>
+                            <Pagination />
                         </td>
                     </tr>
                 </tfoot>

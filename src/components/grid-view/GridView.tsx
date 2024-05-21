@@ -1,4 +1,5 @@
 import Card from "../card/Card"
+import Pagination from "../pagination/Pagination"
 import "./gridView.scss"
 
 const GridView = () => {
@@ -10,6 +11,9 @@ const GridView = () => {
       <Card />
       <Card />
       <Card />
+      <div className="pagination-main">
+        <Pagination />
+      </div>
     </div>
   )
 }

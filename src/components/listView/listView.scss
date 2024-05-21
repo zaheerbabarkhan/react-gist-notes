@@ -108,25 +108,3 @@
   // text-align: right 
 }
 
-.pagination {
-  display: flex;
-  justify-content: flex-end;
-  gap: 15px;
-  align-items: center;
-}
-
-.left-click, .right-click {
-  cursor: pointer;
-}
-.page-number input{
-  font-size: 20px;
-  width: 39px;
-  height: 36px;
-  text-align: center;
-}
-
-.page-number {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
