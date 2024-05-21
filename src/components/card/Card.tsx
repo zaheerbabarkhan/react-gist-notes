@@ -4,6 +4,7 @@ import JSONPretty from 'react-json-prettify';
 import { github } from "react-json-prettify/dist/themes"
 import UserInfo from "../userinfo/UserInfo";
 import StarFork from "../starFork/StarFork";
+import { Link } from "react-router-dom";
 const Card = () => {
   return (
     <div className="card-main">

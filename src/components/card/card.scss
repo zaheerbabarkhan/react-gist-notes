@@ -20,7 +20,7 @@
     &:hover {
       border: 1px solid $primary-color;
       transition: border 0.1s ease;
-
+      cursor: pointer;
     }
     &:hover .card-hover {
       position: absolute;
