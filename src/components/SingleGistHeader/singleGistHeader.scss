@@ -1,0 +1,57 @@
+@import "../../styles.scss";
+
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 15px;
+
+  .fork-star-buttons {
+    display: flex;
+    gap: 10px;
+
+    .star-main,
+    .fork-main {
+      display: flex;
+      align-items: center;
+      align-content: center;
+    }
+
+    .fork-number, .star-number {
+      border-style: solid;
+      border-color: $primary-color;
+      font-size: 18px;
+      height: 40px;
+      min-width: 40px;
+      font-family: "Inter";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      border-radius: 0px 5px 5px 0px;
+      border-width: 1px;
+      padding: 5px;
+      
+    }
+
+    .fork-button,
+    .star-button {
+      font-size: 18px;
+      background-color: $primary-color;
+      width: 100px;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-family: "Inter";
+      height: 40px;
+      border-radius: 5px 0px 0px 5px;
+    }
+
+  }
+}
