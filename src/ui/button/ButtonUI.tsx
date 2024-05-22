@@ -1,8 +1,9 @@
 import React from "react"
 import "./buttonui.scss"
+import { IconBaseProps } from "react-icons"
 
 interface ButtonUIProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  text: string
+  text: React.ReactNode
   className?: string
 }
 const ButtonUI: React.FC<ButtonUIProps> = ({ className, text, ...props }) => {

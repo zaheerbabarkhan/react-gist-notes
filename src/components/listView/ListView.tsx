@@ -1,8 +1,5 @@
 import "./listView.scss"
 import avatar from "../../assets/avavtar-svg.svg"
-import { CiStar } from "react-icons/ci";
-import { PiGitForkThin } from "react-icons/pi";
-import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import StarFork from "../starFork/StarFork";
 import Pagination from "../pagination/Pagination";
 const ListView = () => {
