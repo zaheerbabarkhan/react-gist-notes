@@ -6,11 +6,7 @@ const GridView = () => {
   return (
     <div className="grid-main">
       <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      
       <div className="pagination-main">
         <Pagination />
       </div>

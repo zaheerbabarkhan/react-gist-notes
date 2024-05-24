@@ -1,0 +1,21 @@
+.gist-cards-main{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    .gist-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .all-gist-header {
+        width: 100%;
+        
+        .page-heading {
+            p {
+                margin: 0px;
+            }
+        }
+    }
+}
