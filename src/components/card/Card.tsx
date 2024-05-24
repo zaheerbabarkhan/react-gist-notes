@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({ userDisplay = true, hoverAffect = true, cla
   return (
     <div className={`card-main ${className}`}>
       <div className="card-file">
-        { hoverAffect && <div className="card-hover">
+        {hoverAffect && <div className="card-hover">
           <div className="hover-content">
             <span className="hover-view">View</span>
             <span className="hover-filename">{`filename111.json`}</span>
@@ -30,7 +30,9 @@ const Card: React.FC<CardProps> = ({ userDisplay = true, hoverAffect = true, cla
         userDisplay && <div className="card-info">
           <UserInfo />
           <div className="star-fork-main">
-            <StarFork />
+            <div className="relative">
+              <StarFork />
+            </div>
           </div>
         </div>
       }

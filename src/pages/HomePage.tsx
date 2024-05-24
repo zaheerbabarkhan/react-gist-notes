@@ -5,7 +5,7 @@ import PageHeader from "../components/pageHeader/pageHeader"
 const HomePage = () => {
   return (
     <div className="main-div">
-      <PageHeader />
+      <PageHeader headerText="Public Gists"/>
       {/* <ListView /> */}
       <GridView />
     </div>
