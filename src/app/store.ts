@@ -1,12 +1,13 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
+import authReducer from "../slice/authSlice";
 
 export const store = configureStore({
     reducer: {
-
+        user: authReducer
     }
 })
 
 export type AppDispatch = typeof store.dispatch;
-export type RootState = typeof store.getState
+export type RootState = ReturnType<typeof store.getState>
 
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action<string>>

@@ -6,15 +6,12 @@ interface PageHeaderProps {
     displayViewButtons?: boolean
     headerText: string
     className?: string
+    gridView?: boolean
+    setGridView?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ displayViewButtons = true, headerText, className }) => {
-    const [gridActive, setGridActive] = useState(false);
-    const [listActive, setListActive] = useState(true);
-    const activateAlternateView = () => {
-        setListActive((prevState) => !prevState);
-        setGridActive((prevState) => !prevState);
-    }
+const PageHeader: React.FC<PageHeaderProps> = ({ displayViewButtons = true, headerText, className, gridView, setGridView = () => {} }) => {
+
     return (
         <div className={`page-header ${className}`}>
             <div className="page-heading">
@@ -22,10 +19,10 @@ const PageHeader: React.FC<PageHeaderProps> = ({ displayViewButtons = true, head
             </div>
             {
                 displayViewButtons && <div className="view-buttons">
-                    <button className={`grid-button ${gridActive ? "grid-active" : ""}`} onClick={activateAlternateView}>
+                    <button className={`grid-button ${gridView ? "grid-active" : ""}`} onClick={() => setGridView(true)}>
                         <IoMdGrid size={27} className="grid-icon" />
                     </button>
-                    <button className={`list-button ${listActive ? "list-active" : ""}`} onClick={activateAlternateView}>
+                    <button className={`list-button ${!gridView ? "list-active" : ""}`} onClick={() => setGridView(false)}>
                         <IoIosList size={27} className="list-icon" />
                     </button>
 

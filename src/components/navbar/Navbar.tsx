@@ -5,16 +5,27 @@ import ButtonUI from "../../ui/button/ButtonUI"
 import avatar from "../../assets/avavtar-svg.svg"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { AppDispatch, RootState } from "../../app/store"
+import { useDispatch, useSelector } from "react-redux"
+import { githubUserLogin, userLogout } from "../../slice/authSlice"
 
 const Navbar = () => {
-    const isLoggedIn = true;
+    
     const [dropdownActive, setDropdownActive] = useState(false)
-
+    const dispatch: AppDispatch = useDispatch()
     const showDropDown = () => {
-        console.log("image clicked")
-        console.log("state before", dropdownActive)
         setDropdownActive((prevState) => !prevState)
-        console.log("state after", dropdownActive)
+    }
+
+
+    const loggedIn = useSelector((state: RootState) => state.user.loggedIn);
+    const userInfo = useSelector((state: RootState) => state.user.userData)
+    const loginUser = () => {
+        dispatch(githubUserLogin())
+    }
+    const signoutUser = () => {
+        setDropdownActive(false)
+        dispatch(userLogout())
     }
     return (
         <div className='navbar'>
@@ -29,16 +40,16 @@ const Navbar = () => {
                     <input type="search" placeholder="Search gists" className="search-bar" />
                 </div>
                 {
-                    !isLoggedIn && <div className="nav-login">
+                    !loggedIn && <div className="nav-login">
                         <Link to={""}>
-                            <ButtonUI text="Login" />
+                            <ButtonUI text="Login" onClick={loginUser}/>
                         </Link>
                     </div>
                 }
 
                 {
-                    isLoggedIn && <div className="user-image" onClick={showDropDown}>
-                        <img src={avatar} alt="" />
+                    loggedIn && <div className="user-image" onClick={showDropDown}>
+                        <img src={userInfo?.imageURL ? userInfo.imageURL : avatar} alt="" />
                     </div>
                 }
                 <div className={`dropdown-main ${dropdownActive ? "active" : "inactive"}`}>
@@ -57,7 +68,7 @@ const Navbar = () => {
                         <li> <Link to={""} style={{ all: "unset" }}>Your Github Profile</Link></li>
                         <hr className="dropdown-breaks" />
                         <li> <Link to="https://support.github.com/" target="blank" style={{ all: "unset" }}>Help</Link></li>
-                        <li> <Link to={""} style={{ all: "unset" }}>Sign out</Link></li>
+                        <li> <Link to={"/"} style={{ all: "unset" }} onClick={signoutUser}>Sign out</Link></li>
                     </ul>
                 </div>
             </div>
