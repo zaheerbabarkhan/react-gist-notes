@@ -1,9 +1,9 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import MainLayout from './layout/MainLayout'
-import HomePage from './pages/HomePage'
-import SingleGistPublic from './pages/SingleGistPublicPage'
-import CreateGistPage from './pages/CreateGistPage'
-import AllGistPage from './pages/AllGistPage'
+import MainLayout from '../layout/MainLayout'
+import HomePage from '../pages/HomePage'
+import SingleGistPublic from '../pages/SingleGistPublicPage'
+import CreateGistPage from '../pages/CreateGistPage'
+import AllGistPage from '../pages/AllGistPage'
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<MainLayout />}>
