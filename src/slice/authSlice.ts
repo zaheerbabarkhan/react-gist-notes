@@ -13,7 +13,6 @@ export const githubUserLogin = () => async (dispatch: Dispatch) => {
   signInWithPopup(auth, provider)
     .then((result) => {
       const credential = GithubAuthProvider.credentialFromResult(result);
-      console.log(result)
       const token = credential!.accessToken;
       if (!token) return;
       const user = result.user;
@@ -24,8 +23,7 @@ export const githubUserLogin = () => async (dispatch: Dispatch) => {
         userId: user.uid
       }));
     })
-    .catch((error) => {
-      console.log(error);
+    .catch((_error) => {
       
     })
     .finally(() => {
@@ -45,7 +43,6 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     userLogin: (state, action) => {
-      console.log("setting state to true")
       state.loggedIn = true;
       state.userData = {
         displayName: action.payload.displayName,

@@ -35,7 +35,6 @@ const GridView = () => {
             fileURL: gist.files[Object.keys(gist.files)[0]].raw_url,
             id: gist.id
           }
-          console.log(gistData)
           return <Card gistData={gistData} />
         })
       }

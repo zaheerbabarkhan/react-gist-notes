@@ -2,25 +2,53 @@ import { PiGitForkThin } from "react-icons/pi"
 import UserInfo from "../userinfo/UserInfo"
 import "./singleGistHeader.scss"
 import { CiStar } from "react-icons/ci"
-import { UserInfoProps } from "../../types/props/userinfo.props"
-import React from "react"
+import React, { useEffect, useState } from "react"
+import axiosInstacne from "../../api/axios"
+import { HeaderProps } from "../../types/props/singleGistHeader.props"
 
-interface HeaderProps {
-  userInfo: UserInfoProps
-}
-const SingleGistHeader: React.FC<HeaderProps> = ({ userInfo }) => {
+
+const SingleGistHeader: React.FC<HeaderProps> = ({ userInfo, gistId }) => {
+  const [forks, setForks] = useState(null)
+
+  const forkAGist = async () => {
+    try {
+      const response = await axiosInstacne.post(`/gists/${gistId}/forks`)
+      if (response.status === 201) {
+        await getGistForks(gistId)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const getGistForks = async (id: string) => {
+    try {
+      const response = await axiosInstacne.get(`/gists/${id}/forks`)
+      setForks(response.data.length)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  useEffect(() => {
+
+    if (gistId) {
+      getGistForks(gistId)
+    }
+  })
   return (
     <div className="header-main">
       <UserInfo {...userInfo} />
       <div className="fork-star-buttons">
         <div className="fork-main">
           <div>
-            <button className="fork-button">
+            <button className="fork-button" onClick={forkAGist}>
               <PiGitForkThin size={30} /> Fork
             </button>
           </div>
           <div className="fork-number">
-            <p>5</p>
+            <p>{
+              gistId ? forks : ""
+            }</p>
           </div>
         </div>
         <div className="star-main">
@@ -30,7 +58,7 @@ const SingleGistHeader: React.FC<HeaderProps> = ({ userInfo }) => {
             </button>
           </div>
           <div className="star-number">
-            <p>288</p>
+            <p>0</p>
           </div>
         </div>
       </div>
