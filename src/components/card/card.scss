@@ -10,6 +10,8 @@
   pre {
     margin: 0px !important;
     padding-top: 20px;
+    overflow: hidden;
+    scrollbar-width: none;
   }
 
   .card-file {

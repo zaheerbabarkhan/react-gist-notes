@@ -9,6 +9,7 @@
   .image img {
     height: 50px;
     width: 50px;
+    border-radius: 50px;
   }
 
   .info {
@@ -18,7 +19,7 @@
     height: auto;
     gap: 7px;
     white-space: nowrap;
-
+    display: inline-block;
     .user-info {
       font-size: 16px;
       font-family: "Inter";
@@ -29,12 +30,18 @@
         font-weight: 600;
         cursor: pointer;
         overflow: hidden;
+        width: 250px;
+        
+        
       }
     }
 
     .gist-info {
+      padding-top: 10px;
       font-size: 13px;
       color: #7a7a7a;
+      width: 300px;
+      overflow: hidden;
     }
   }
 }

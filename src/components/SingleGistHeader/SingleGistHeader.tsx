@@ -2,11 +2,16 @@ import { PiGitForkThin } from "react-icons/pi"
 import UserInfo from "../userinfo/UserInfo"
 import "./singleGistHeader.scss"
 import { CiStar } from "react-icons/ci"
+import { UserInfoProps } from "../../types/props/userinfo.props"
+import React from "react"
 
-const SingleGistHeader = () => {
+interface HeaderProps {
+  userInfo: UserInfoProps
+}
+const SingleGistHeader: React.FC<HeaderProps> = ({ userInfo }) => {
   return (
     <div className="header-main">
-      <UserInfo />
+      <UserInfo {...userInfo} />
       <div className="fork-star-buttons">
         <div className="fork-main">
           <div>

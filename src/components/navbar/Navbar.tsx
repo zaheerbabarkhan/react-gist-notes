@@ -19,7 +19,7 @@ const Navbar = () => {
 
 
     const loggedIn = useSelector((state: RootState) => state.user.loggedIn);
-    const userInfo = useSelector((state: RootState) => state.user.userData)
+    const userInfo = useSelector((state: RootState) => state.user.userData);
     const loginUser = () => {
         dispatch(githubUserLogin())
     }

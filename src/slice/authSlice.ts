@@ -13,13 +13,15 @@ export const githubUserLogin = () => async (dispatch: Dispatch) => {
   signInWithPopup(auth, provider)
     .then((result) => {
       const credential = GithubAuthProvider.credentialFromResult(result);
+      console.log(result)
       const token = credential!.accessToken;
       if (!token) return;
       const user = result.user;
       dispatch(userLogin({
         displayName: user.displayName,
         token,
-        imageURL: user.photoURL
+        imageURL: user.photoURL,
+        userId: user.uid
       }));
     })
     .catch((error) => {
@@ -48,6 +50,7 @@ export const authSlice = createSlice({
       state.userData = {
         displayName: action.payload.displayName,
         imageURL: action.payload.imageURL,
+        userId: action.payload.userId
       }
       state.dataLoaded = true
       localStorage.setItem('loggedIn', 'true');

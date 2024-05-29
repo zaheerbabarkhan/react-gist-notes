@@ -1,7 +1,7 @@
 export interface User {
     imageURL: string
     displayName: string
-    userName?: string
+    userId?: string
 }
 
 export interface AuthState {
