@@ -41,9 +41,9 @@ const Navbar = () => {
                 </div>
                 {
                     !loggedIn && <div className="nav-login">
-                        <Link to={""}>
+                        {/* <Link to={""}> */}
                             <ButtonUI text="Login" onClick={loginUser}/>
-                        </Link>
+                        {/* </Link> */}
                     </div>
                 }
 

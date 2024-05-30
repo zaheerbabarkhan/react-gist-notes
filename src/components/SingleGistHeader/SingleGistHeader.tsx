@@ -21,6 +21,17 @@ const SingleGistHeader: React.FC<HeaderProps> = ({ userInfo, gistId }) => {
     }
   }
 
+  const starAGist = async () => {
+    try {
+      console.log("this is gist id", gistId)
+
+      const response = await axiosInstacne.put(`/gists/${gistId}/star`)
+      console.log(response.status)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   const getGistForks = async (id: string) => {
     try {
       const response = await axiosInstacne.get(`/gists/${id}/forks`)
@@ -53,7 +64,7 @@ const SingleGistHeader: React.FC<HeaderProps> = ({ userInfo, gistId }) => {
         </div>
         <div className="star-main">
           <div>
-            <button className="star-button">
+            <button className="star-button" onClick={starAGist}>
               <CiStar size={30} /> Star
             </button>
           </div>

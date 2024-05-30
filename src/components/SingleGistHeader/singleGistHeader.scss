@@ -51,6 +51,10 @@
       font-family: "Inter";
       height: 40px;
       border-radius: 5px 0px 0px 5px;
+      &:active {
+        box-shadow: 0 3px transparent;
+        transform: translateY(4px);
+      }
     }
 
   }
