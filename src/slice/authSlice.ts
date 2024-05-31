@@ -1,6 +1,7 @@
 import { createSlice, Dispatch } from "@reduxjs/toolkit";
 import { getAuth, GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import { AuthState } from "../types/user.types";
+import axiosInstacne from "../api/axios";
 
 
 
@@ -15,13 +16,23 @@ export const githubUserLogin = () => async (dispatch: Dispatch) => {
       const credential = GithubAuthProvider.credentialFromResult(result);
       const token = credential!.accessToken;
       if (!token) return;
-      const user = result.user;
-      dispatch(userLogin({
-        displayName: user.displayName,
-        token,
-        imageURL: user.photoURL,
-        userId: user.uid
-      }));
+      axiosInstacne.get("user", {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      }).then((response) => {
+        if (response.status === 200) {
+          const data = response.data
+          dispatch(userLogin({
+            displayName: data.name,
+            token,
+            imageURL: data.avatar_url,
+            userId: data.id,
+            htmlURL: data.html_url,
+            username: data.login
+          }));
+        }
+      })
     })
     .catch((_error) => {
       
@@ -45,6 +56,8 @@ export const authSlice = createSlice({
     userLogin: (state, action) => {
       state.loggedIn = true;
       state.userData = {
+        htmlURL: action.payload.htmlURL,
+        username: action.payload.username,
         displayName: action.payload.displayName,
         imageURL: action.payload.imageURL,
         userId: action.payload.userId

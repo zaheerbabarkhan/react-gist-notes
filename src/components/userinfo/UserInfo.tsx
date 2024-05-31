@@ -13,8 +13,8 @@ const UserInfo: React.FC<UserInfoProps> = ({createdAt, description, gistName, us
       </div>
       <div className="info">
         <div className="user-info">
-            <span className="user-name"> <Link to={"/"} style={{ all: "unset"}}>{userName}</Link> </span> / 
-            <span className="gist-name"> <Link to={"/"} style={{ all: "unset"}}>{gistName.substring(0,10)}</Link></span>
+            <span className="user-name"> <Link to={`/gists/users/${userName}`} style={{ all: "unset"}}>{userName}</Link> </span> / 
+            <span className="gist-name"> <Link to={`gists/${gistName}`} style={{ all: "unset"}}>{gistName.substring(0,10)}</Link></span>
         </div>
         <div className="gist-info">
             <div>Created At {createdAt.toString()}</div>

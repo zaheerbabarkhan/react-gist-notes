@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { githubUserLogin, userLogout } from "../../slice/authSlice"
 
 const Navbar = () => {
-    
+
     const [dropdownActive, setDropdownActive] = useState(false)
     const dispatch: AppDispatch = useDispatch()
     const showDropDown = () => {
@@ -41,9 +41,7 @@ const Navbar = () => {
                 </div>
                 {
                     !loggedIn && <div className="nav-login">
-                        {/* <Link to={""}> */}
-                            <ButtonUI text="Login" onClick={loginUser}/>
-                        {/* </Link> */}
+                        <ButtonUI text="Login" onClick={loginUser} />
                     </div>
                 }
 
@@ -63,11 +61,11 @@ const Navbar = () => {
                             </div>
                         </Link></li>
                         <hr className="dropdown-breaks" />
-                        <li> <Link to={""} style={{ all: "unset" }}>Your gists</Link></li>
-                        <li> <Link to={""} style={{ all: "unset" }}>Starred gists</Link></li>
-                        <li> <Link to={""} style={{ all: "unset" }}>Your Github Profile</Link></li>
+                        <li> <Link to={`/gists/users/${userInfo?.username}`} style={{ all: "unset" }}>Your gists</Link></li>
+                        <li> <Link to={`/gists/users/${userInfo?.username}?starred=true`} style={{ all: "unset" }}>Starred gists</Link></li>
+                        <li> <Link to={userInfo?.htmlURL as string} target="_blank" style={{ all: "unset" }}>Your Github Profile</Link></li>
                         <hr className="dropdown-breaks" />
-                        <li> <Link to="https://support.github.com/" target="blank" style={{ all: "unset" }}>Help</Link></li>
+                        <li> <Link to="https://support.github.com/" target="_blank" style={{ all: "unset" }}>Help</Link></li>
                         <li> <Link to={"/"} style={{ all: "unset" }} onClick={signoutUser}>Sign out</Link></li>
                     </ul>
                 </div>
