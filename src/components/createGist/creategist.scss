@@ -43,8 +43,13 @@
       border-radius: 4px 4px 0px 0px;
       border-width: 2px;
       border-style: solid;
+      gap: 10px;
       border-color: #efefef;
 
+      button {
+        border: none;
+        cursor: pointer;
+      }
       input {
         height: 45px;
         width: 300px;

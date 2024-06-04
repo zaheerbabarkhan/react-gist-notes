@@ -6,6 +6,12 @@ body {
     box-sizing: border-box;
     height: auto;
 }
+
+button:disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 $primary-color: #003B44;
 $text-color: #ffffff;
 $skeleton-color: #E3E3E3

@@ -1,24 +1,14 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import Card from "../card/Card"
 import Pagination from "../pagination/Pagination"
 import "./gridView.scss"
 import { GistData } from "../../types/props/card.props"
 import { Gist } from "../../types/gist.types"
 import { getGists } from "../../api/gists"
+import { GridListViewProps } from "../../types/props/girdListView.props"
 
-const GridView = () => {
-  const [gists, setGists] = useState([])
-  const [currentPage, setCurrentPage] = useState(1);
-  const pageLimit = 6;
-  useEffect(() => {
-
-    getGists(setGists, currentPage, pageLimit)
-
-  }, [currentPage])
-
-
-
-
+const GridView: React.FC<GridListViewProps> = ({ gists, currentPage, setCurrentPage}) => {
+  
   return (
     <div className="grid-main">
       {

@@ -2,16 +2,10 @@ import "./listView.scss"
 import avatar from "../../assets/avavtar-svg.svg"
 import StarFork from "../starFork/StarFork";
 import Pagination from "../pagination/Pagination";
-import { useEffect, useState } from "react";
-import { getGists } from "../../api/gists";
 import { Gist } from "../../types/gist.types";
-const ListView = () => {
-    const [gists, setGists] = useState([])
-    const [currentPage, setCurrentPage] = useState(1);
-    const pageLimit = 7;
-    useEffect(() => {
-        getGists(setGists, currentPage, pageLimit)
-    }, [currentPage])
+import { GridListViewProps } from "../../types/props/girdListView.props";
+const ListView: React.FC<GridListViewProps> = ({ gists, currentPage, setCurrentPage}) => {
+   
 
     return (
         <div className="list-view">

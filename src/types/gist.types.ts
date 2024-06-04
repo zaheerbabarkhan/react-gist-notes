@@ -17,3 +17,14 @@ export interface Gist {
     description: string
     updated_at: Date
 }
+
+export type GistFileType = {
+    content: string;
+    filename: string;
+  };
+
+export interface CreateGistI {
+    public: boolean;
+  description?: string;
+  files: { [key: string]: GistFileType | null };
+}

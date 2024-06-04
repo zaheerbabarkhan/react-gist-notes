@@ -20,7 +20,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<HomePage />} />
     <Route path='/gists/:id' element={<SingleGistPublic />}/>
     <Route path='/gists/create' element={<CreateGistPage />}/>
-    <Route path='/gists/users/:username' element={<AllGistPage gistType='ALL' />}/>
+    <Route path='/gists/users/:username' element={<AllGistPage />}/>
   </Route>
 ))
 function App() {

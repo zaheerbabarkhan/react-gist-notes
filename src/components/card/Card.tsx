@@ -43,7 +43,7 @@ const Card: React.FC<CardProps> = ({ userDisplay = true, hoverAffect = true, cla
           <UserInfo {...gistData.userInfo}/>
           <div className="star-fork-main">
             <div className="relative">
-              <StarFork />
+              <StarFork gistId={gistData.id}/>
             </div>
           </div>
         </div>

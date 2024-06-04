@@ -1,11 +1,16 @@
+@import "../../styles.scss";
+
 .star-fork-icon {
-    display: flex;
-    justify-content: flex-end;
-    gap: 30px;
-    padding-right: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  padding-right: 20px;
 
-    .star-icon, .fork-icon{
-      cursor: pointer;
-    }
+  .star-icon,
+  .fork-icon {
+    cursor: pointer;
   }
-
+  .filled-fork-star {
+    color: $primary-color;
+  }
+}
